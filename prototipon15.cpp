@@ -1,7 +1,7 @@
 #include <iostream>
 #include <stdlib.h>
 #include <conio.h>
-
+#include <windows.h>
 using namespace std;
 
 //Classe Mapa
@@ -63,7 +63,8 @@ void Creditos();
 void Dialogo(int dialogo);
 
 int main(){
-
+	
+    
     char escolha=' ';
 	//Criação Personagem-Objeto
     Personagem synth;
@@ -73,6 +74,16 @@ int main(){
 
 	
     do{
+    	//ESSAS FUNÇÕES REDEFINEM O TAMANHO DO TEXTO
+		static CONSOLE_FONT_INFOEX  fontex;
+    	fontex.cbSize = sizeof(CONSOLE_FONT_INFOEX);
+    	HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
+    	GetCurrentConsoleFontEx(hOut, 0, &fontex);
+    	fontex.FontWeight = 12;
+    	fontex.dwFontSize.X = 15;
+    	fontex.dwFontSize.Y = 15;
+    	SetCurrentConsoleFontEx(hOut, NULL, &fontex);
+    	
         system("clear || cls");
         system("color 0E");
         fflush(stdin);
@@ -125,7 +136,6 @@ int main(){
         	//PONTO DE CHECAGEM DE VIDA
         	synth.vida!=0 ? Reboot_only(mapa) : Game_over();
         	
-			
 			//POSICIONANDO O JOGADOR EM LUGAR 
         	//CONVENIENTE PARA A FASE 2
         	synth.l=46;
@@ -166,6 +176,7 @@ int main(){
             cout<<"\t\t\t\t>: Simbolo que representa um teletransporte. O teletransporte sempre deve vir em par, quando o "<<endl;
             cout<<"\t\t\t\tjogador toca em um ele eh transportado para o outro e vice-versa."<<endl;
             cout<<"\t\t\t\t!: Simbolo que representa um puzzle, aperte I ou i para interagir com ele"<<endl;
+            cout<<"\t\t\t\t0: Simbolo que representa um terminal, aperte I ou i para interagir com ele"<<endl;
             cout<<"\n\t\t\t\t";
             system("pause");
         }
@@ -444,11 +455,25 @@ void Mapa::Plot2(int& persol, int& persoc){
 
 //MAPA DO NIVEL 2
 void Mapa::Plot3(int& persol, int& persoc){
+	
+	//ESSAS FUNÇÕES REDEFINEM O TAMANHO DO TEXTO
+	
+	static CONSOLE_FONT_INFOEX  fontex;
+    fontex.cbSize = sizeof(CONSOLE_FONT_INFOEX);
+    HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
+    GetCurrentConsoleFontEx(hOut, 0, &fontex);
+    fontex.FontWeight = 12;
+    fontex.dwFontSize.X = 10;
+    fontex.dwFontSize.Y = 10;
+    SetCurrentConsoleFontEx(hOut, NULL, &fontex);
 
+    
+    
 	//O COMPRIMENTO DO MAPA É DE 50x50
+	system("color 0A");
 	for(l=0;l<50;l++){
 		
-		cout<<"\t\t\t\t\t\t";
+		cout<<"\t\t\t\t\t\t\t\t\t";
 		
 		for(c=0;c<50;c++){
 			
@@ -482,6 +507,81 @@ void Mapa::Plot3(int& persol, int& persoc){
                 cout<<mapa[l][c]<<" ";
 			}
 			
+			//Labirinto de espinhoso
+			else if(l>0 and l<19){
+				
+				//Delimitação espinhosa
+				if(l==1 or l==18 or c==1 or c==48){
+					
+					//Porta entrada labirinto fechada 
+					if(l==18 and c==25 and botao==false){
+						mapa[l][c]='D';
+                		cout<<mapa[l][c]<<" ";
+					}
+					
+					//Porta entrada labirinto aberta
+					else if(l==18 and c==25 and botao==true ){
+						mapa[l][c]='=';
+                		cout<<mapa[l][c]<<" ";
+					}
+					
+					//Paredão	
+					else{
+						mapa[l][c]='#';
+                		cout<<mapa[l][c]<<" ";
+					}
+				}
+				
+				//Camara do terminal
+				else if((l==5 and c>22 and c<28) or ( (c==23 or c==27 ) and l>4 and l<10) or (l==9 and c>22 and c<28) ){
+					mapa[l][c]='#';
+                	cout<<mapa[l][c]<<" ";
+				}
+				
+				//Direção 1
+				else if( (l>14 and l<18 and c==26) or (l==15 and c>26 and c<45) or (l>8 and l<16 and (c==44 or c==46) or (l>2 and l<10 and c==45)  )){
+					mapa[l][c]='#';
+                	cout<<mapa[l][c]<<" ";
+				}
+				
+				//Direção 2
+				else if( ((l>1 and l<5 or l>9 and l<14) and c==26) or (l==13 and c>26 and c<43) or (c==42 and l>8 and l<14)){
+					mapa[l][c]='#';
+                	cout<<mapa[l][c]<<" ";
+				}
+				
+				//Direção 3
+				else if( (l>2 and l<10 and c==41) or (l>1 and l<8 and c==43) or (l==3 and c>29 and c<42) or (l>2 and  l<12 and c==28)){
+					if(l==7 and c==28){
+						mapa[l][c]=' ';
+                		cout<<mapa[l][c]<<" ";
+					}
+					else{
+						mapa[l][c]='#';
+                		cout<<mapa[l][c]<<" ";	
+                	}
+				}
+				
+				//Direção 4
+				else if( (l==5 and c>28 and c<40) or (l>4 and l<12 and c==30) or(l==7 and c>31 and c<41) or (l==9 and c>29 and c<40) or (l==11 and c>31 and c<42)){
+					mapa[l][c]='#';
+                	cout<<mapa[l][c]<<" ";	
+				}
+				
+				//Caminho dentado para chave
+				else if( (l==16 and c>27 and c%4==0) or (l==17 and c>29 and (c-2)%4==0) ){
+					mapa[l][c]='#';
+                	cout<<mapa[l][c]<<" ";
+				}
+				
+				
+				//Vazio do labirinto espinhoso
+				else{
+					mapa[l][c]=' ';
+                	cout<<mapa[l][c]<<" ";	
+				}
+				
+			}
 			
 			//Terminal
 			else if(l==46 and c==1){
@@ -500,7 +600,7 @@ void Mapa::Plot3(int& persol, int& persoc){
 		cout<<"\n";
 	}
 	
-	
+
 }
 
 
@@ -510,7 +610,6 @@ void Mapa::Plot3(int& persol, int& persoc){
 //MOVIMENTAÇÃO/INTERAÇÃO DO PERSONAGEM PELO MAPA
 void Personagem::Movimento(Mapa& mapa){
 	
-	system("color 0A");
     cout<<"\t\t\t\tVIDAS: "<<vida<<" BOTAO: "<<mapa.botao<<" CHAVE: "<<mapa.chave<<" FECHADURA: "<<mapa.fechadura<<endl;
     cout<<"\t\t\t\t>";
 
@@ -986,7 +1085,7 @@ void Dialogo(int dialogo){
 	
 	
 	
-	//DIALOGO DO INICIOM DO JOGO
+	//DIALOGO DO INICIO DO JOGO
 	if(dialogo==0){
 		system("clear || cls");
         system("color 0E");
