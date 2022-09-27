@@ -2789,12 +2789,12 @@ void Dialogo(int dialogo){
 	    cout<<"\t\t\t\t                                 JOAO RENAN SANTANNA LOPES                                               "<<endl;
 	    cout<<"\t\t\t\t                                     CAIQUE SACRAMENTO                                                   "<<endl;
 	    cout<<"\t\t\t\t                                                                                                         "<<endl;
-      cout<<"\t\t\t\t                                                                                                         "<<endl;
-      cout<<"\t\t\t\t                                      PROGRAMADOR GERAL:                                                 "<<endl;
-      cout<<"\t\t\t\t                             ------------------------------------                                        "<<endl;
-      cout<<"\t\t\t\t                                CARLOS HENRIQUE MIRANDA ESTEVES                                          "<<endl;
-      cout<<"\t\t\t\t                                                                                                         "<<endl;
-      cout<<"\t\t\t\t                                                                                                         "<<endl;
+	    cout<<"\t\t\t\t                                                                                                         "<<endl;
+	    cout<<"\t\t\t\t                                      PROGRAMADOR GERAL:                                                 "<<endl;
+	    cout<<"\t\t\t\t                             ------------------------------------                                        "<<endl;
+	    cout<<"\t\t\t\t                                CARLOS HENRIQUE MIRANDA ESTEVES                                          "<<endl;
+	    cout<<"\t\t\t\t                                                                                                         "<<endl;
+	    cout<<"\t\t\t\t                                                                                                         "<<endl;
 	    cout<<"\t\t\t\t                              DESIGNER E PROGRAMACAO DE PUZZLES:                                         "<<endl;
 	    cout<<"\t\t\t\t                             ------------------------------------                                        "<<endl;
 	    cout<<"\t\t\t\t                                 JOAO RENAN SANTANNA LOPES                                               "<<endl;
