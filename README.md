@@ -44,10 +44,10 @@ O: Simbolo que representa um botão que o usuário pode interagir, o botão fica
 
 # Créditos:
 
--Professor de programação: Pedro Girotto (@PedroGirotto)
+*Professor de programação: Pedro Girotto (@PedroGirotto)
 
--Programador Geral: Carlos Henrique Miranda Esteves (@10CarlosEsteves)
+*Programador Geral: Carlos Henrique Miranda Esteves (@10CarlosEsteves)
 
--Designer de Mapas e de puzzles: João Renan Santanna Lopes (@LoowdY)
+*Designer de Mapas e de puzzles: João Renan Santanna Lopes (@LoowdY)
 
--Tester do jogo: Caique Sacramento (@CaiqueSacramento)
+*Tester do jogo: Caique Sacramento (@CaiqueSacramento)
