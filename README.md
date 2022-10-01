@@ -9,7 +9,7 @@ O jogo foi criado com o proposito avaliativo do segundo periodo do curso de enge
 
 O projeto em si é baseado no jogo The enigma machine, do produtor independente, Jamie Gavin. Tanto os diálogos, como trama e design de mapas foram inteiramente baseados em seu jogo. O jogo começa com uma IA chamada demOS que lhe ajudará num suposto treinamento de descontaminação de androides, tal treinamento consiste em invadir os sonhos dos androides contaminados e descobrir a fonte da contaminação. Em cada nível existe um código e puzzles, voce deve resolver os puzzles para descobrir os códigos e iniciar a descontaminação. Cuidado! As vezes a IA pode se tornar um pouco...instável. 
 
-#Aviso de Fotossensibilidade:
+# ⚠️ Aviso de Fotossensibilidade:
 Uma porcentagem muito pequena de indivíduos pode sofrer ataques epiléticos quando expostos a certos padrões de luz ou luzes piscantes. A exposição a certos padrões ou planos de fundo em uma tela de computador, ou ao jogar videogames, pode induzir um ataque epiléptico nesses indivíduos. Certas condições podem induzir sintomas epilépticos não detectados anteriormente, mesmo em pessoas que não têm histórico de convulsões ou epilepsia anteriores.
 
 Se você, ou alguém da sua família, tiver uma condição epilética, consulte o seu médico antes de jogar. Se você sentir algum dos seguintes sintomas ao assistir um vídeo ou jogo de computador - tontura, visão alterada, contrações musculares ou oculares, perda de consciência, desorientação, qualquer movimento involuntário ou convulsões - interrompa IMEDIATAMENTE o uso e consulte seu médico antes de retomar o jogo.
