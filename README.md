@@ -1,5 +1,5 @@
 # THE ENIGMA MACHINE
-
+<img src="images/theenigmammachine.jpg" align="center" width="1000" height="400">
 # Propósito:
 
 O jogo foi criado com o proposito avaliativo do segundo periodo do curso de engenharia da computação do CESUPA, para estimular no aluno competencias algoritmicas bem como por em prática o conhecimento adquirido ao longo do semestre de classes e manipulação de matrizes por meio de uma atividade lúdica, um jogo, assim surgiu The enigma machine.
